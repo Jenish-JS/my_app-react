@@ -36,42 +36,6 @@ function Notes() {
 
   return (
     <>
-      {Data.map((Value, Index, Array) => {
-        const date = new Date(Value.createdAt);
-        let dt =
-          date.getDate() +
-          "-" +
-          date.getMonth() +
-          "-" +
-          date.getFullYear() +
-          " Time " +
-          date.getHours() +
-          ":" +
-          date.getMinutes() +
-          ":" +
-          date.getSeconds() +
-          " " +
-          date.toLocaleTimeString();
-        // console.log(dt);
-        return (
-          <>
-            <div key={Index} id="Con" style={{border: "2px solid black", marginTop: "10px"}} onClick={(e) => {
-              e.preventDefault()
-
-              navigator(`/getdata/${Value.id}`)
-            }}>
-              <div className="Left">
-                <img src={Value.avatar} alt="" />
-              </div>
-              <div className="Right">
-                <h1 name="id">{Value.id}</h1>
-                <h1>{Value.name}</h1>
-                <h1>{dt}</h1>
-              </div>
-            </div>
-          </>
-        );
-      })}
     </>
   );
 }
